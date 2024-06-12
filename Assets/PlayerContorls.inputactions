@@ -6,8 +6,8 @@
             "id": "eedf863e-b955-4c48-87f5-02275c8816b6",
             "actions": [
                 {
-                    "name": "Move",
-                    "type": "Value",
+                    "name": "Movement",
+                    "type": "PassThrough",
                     "id": "ec1260e7-8b6b-42a8-a77a-37e6b741287f",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -15,19 +15,10 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "UpDownMouse",
+                    "name": "LookAround",
                     "type": "Value",
                     "id": "c5f98bd6-9d25-4fbb-9456-832d87bf81c5",
                     "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "LeftRightMouse",
-                    "type": "Value",
-                    "id": "35fde1e3-83d2-4245-997a-643f707cddfe",
-                    "expectedControlType": "Delta",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -35,13 +26,13 @@
             ],
             "bindings": [
                 {
-                    "name": "2D Vector",
+                    "name": "WASD",
                     "id": "817f7c4e-369a-4544-b6aa-b7d66a25192c",
-                    "path": "2DVector(mode=1)",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Movement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -52,7 +43,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardAndMouse",
-                    "action": "Move",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -63,7 +54,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardAndMouse",
-                    "action": "Move",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -74,7 +65,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardAndMouse",
-                    "action": "Move",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -85,20 +76,9 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardAndMouse",
-                    "action": "Move",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "bfd74274-9cae-4d7e-ba81-ab2ed088210e",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -107,18 +87,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "UpDownMouse",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7520b8c5-5ec2-4fa6-91bb-8a06402efb77",
-                    "path": "<Mouse>/delta/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "LeftRightMouse",
+                    "action": "LookAround",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
