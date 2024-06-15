@@ -223,7 +223,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.9605474, y: 0.84, z: -0.39554858}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 7.7099}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -485,10 +485,18 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ec1260e7-8b6b-42a8-a77a-37e6b741287f
+    m_ActionName: PlayerActions/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c5f98bd6-9d25-4fbb-9456-832d87bf81c5
+    m_ActionName: PlayerActions/UpDownMouse[/Mouse/delta/y]
+  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1578287518}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: OnMove
+        m_MethodName: Dash
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -498,24 +506,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-    m_ActionId: ec1260e7-8b6b-42a8-a77a-37e6b741287f
-    m_ActionName: PlayerActions/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1578287518}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: OnVerticalCameraMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: c5f98bd6-9d25-4fbb-9456-832d87bf81c5
-    m_ActionName: PlayerActions/UpDownMouse[/Mouse/delta/y]
+    m_ActionId: 9933383e-1cbe-41e4-be67-aa764fde27a1
+    m_ActionName: PlayerActions/Dash[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: KeyboardAndMouse
   m_DefaultActionMap: PlayerActions
@@ -536,6 +528,8 @@ MonoBehaviour:
   moveSpeed: 5
   mouseSensivity: 5
   health: 100
+  dashDistance: 40
+  dashReloadTime: 1
   gameCamera: {fileID: 1617333778}
   position: {x: 0, y: 0, z: 0}
 --- !u!1 &1617333777
