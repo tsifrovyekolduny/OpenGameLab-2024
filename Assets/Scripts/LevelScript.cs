@@ -5,24 +5,26 @@ using UnityEngine;
 public class LevelScript : MonoBehaviour
 {
     public LevelScript From;
-    public Door[] AllHiddenDoors;
+    public Door[] AllDoors;
+
+    void InitAllDoors()
+    {
+        AllDoors = transform.GetComponentsInChildren<Door>();
+    }
+
+    private void Awake()
+    {
+        // InitAllDoors();
+    }
 
     void Start()
-    {
-        var levels = (LevelScript[]) GameObject.FindObjectsOfType(typeof(LevelScript));
-        gameObject.name = levels.Length.ToString();
-
-        foreach(var door in AllHiddenDoors)
+    {       
+        foreach(var door in AllDoors)
         {
-            if (door.From == gameObject.name)
+            if (door.IsEnter)
             {
-                door.enabled = true;
+                door.gameObject.SetActive(false);
             }
         }
-    }
-    
-    void Update()
-    {
-        
     }
 }

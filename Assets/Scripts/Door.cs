@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    public bool IsEnter;
     public string From;
     public string To;
     public float OpeningSpeed = 100f;

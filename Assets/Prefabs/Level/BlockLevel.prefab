@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   From: {fileID: 0}
-  AllHiddenDoors:
+  AllDoors:
   - {fileID: 5827682095921172360}
 --- !u!1 &5418049088898019801
 GameObject:
@@ -448,7 +448,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2314099988152366565, guid: 5a72441dc2d41af42aeec4dabbade500, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921431532769278462, guid: 5a72441dc2d41af42aeec4dabbade500, type: 3}
+      propertyPath: IsEnter
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5710309354701248475, guid: 5a72441dc2d41af42aeec4dabbade500, type: 3}
       propertyPath: m_LocalPosition.x
