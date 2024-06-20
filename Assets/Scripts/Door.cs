@@ -8,30 +8,18 @@ public class Door : MonoBehaviour
     public string From;
     public string To;
     public float OpeningSpeed = 100f;
-    void Start()
+    private Animator _animator;
+    public void Start()
     {
-        
+        _animator = GetComponentInChildren<Animator>();
+    }
+    public void OpenDoor()
+    {
+        _animator.SetTrigger("Open");
     }
 
-    void Update()
+    public void CloseDoor()
     {
-        
-    }
-
-    private void SetToHingeJointTarget(float targetPosition, bool fast = false)
-    {
-        HingeJoint hingeJoint = transform.GetComponentInChildren<HingeJoint>();
-        JointSpring jointSpring = hingeJoint.spring;
-        if (fast)
-        {
-            jointSpring.spring = 10000;
-        }
-        else
-        {
-            jointSpring.spring = OpeningSpeed;
-        }
-
-        jointSpring.targetPosition = targetPosition;
-        hingeJoint.spring = jointSpring;
+        _animator.SetTrigger("Close");
     }
 }

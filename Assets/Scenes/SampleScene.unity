@@ -419,11 +419,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca87a8eebb55ee4dbddab6e016c8782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CountsOfLevels: 4
+  CountsOfLevels: 6
   LevelPrefabs:
   - {fileID: 6442226727908904328, guid: cc1dc93b42d2b2b4685932f3f717e3ca, type: 3}
+  - {fileID: 6442226727908904328, guid: 4350bafd0d01f4648a6ca130c35f95e6, type: 3}
   - {fileID: 6442226727908904328, guid: d0bd6f8a9458f6b4293b2e12b3440527, type: 3}
   - {fileID: 6442226727908904328, guid: b158c6588e35ac342b76e88c7d5b4027, type: 3}
+  - {fileID: 6442226727908904328, guid: 082b4058c64870d478b2cb181440cc72, type: 3}
+  - {fileID: 6442226727908904328, guid: 1ada0b01a4721a54fbb69bc86beeb274, type: 3}
   FirstSpawnPoint: {fileID: 424624977}
   SpawnedLevels: []
 --- !u!4 &913541687
@@ -487,9 +490,10 @@ GameObject:
   - component: {fileID: 1578287512}
   - component: {fileID: 1578287518}
   - component: {fileID: 1578287517}
+  - component: {fileID: 1578287519}
   m_Layer: 0
   m_Name: MainHero
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -688,6 +692,33 @@ MonoBehaviour:
   health: 100
   gameCamera: {fileID: 1617333778}
   position: {x: 0, y: 0, z: 0}
+--- !u!54 &1578287519
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578287511}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1617333777
 GameObject:
   m_ObjectHideFlags: 0

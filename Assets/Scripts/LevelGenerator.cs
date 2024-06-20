@@ -31,7 +31,7 @@ public class LevelGenerator : Singletone<LevelGenerator>
         }
         while (level.AllDoors.Length <= 1);
 
-        level = Instantiate(level, spawnPoint.transform.position, Quaternion.identity);
+        level = Instantiate(level, spawnPoint.transform.position, spawnPoint.transform.rotation);
         SetThisLevelInWorldSpace(level, spawnPoint, counter == CountsOfLevels);
 
         foreach (var door in level.AllDoors)
@@ -49,15 +49,12 @@ public class LevelGenerator : Singletone<LevelGenerator>
         InitLevel(door, counter - 1);
     }
 
-    IEnumerator Test_Positioning(float timer, Door door, Door otherDoor, LevelScript level)
+    void SetPosition(float timer, Door door, Door otherDoor, LevelScript level)
     {
-        yield return new WaitForSeconds(timer);
+        // yield return new WaitForSeconds(timer);
 
         float distanceX = otherDoor.transform.position.x - door.transform.position.x;
-        float distanceZ = otherDoor.transform.position.z - door.transform.position.z;
-        Debug.Log($"{level.name} with position {level.transform.position} to {otherDoor.transform.parent.position}:" +
-            $" shift is X: {distanceX} Z: {distanceZ}");
-        Debug.Log($"Door {door.transform.position} to {otherDoor.transform.position}");
+        float distanceZ = otherDoor.transform.position.z - door.transform.position.z;        
         Vector3 shiftedPosition = new Vector3(level.transform.position.x + distanceX,
                                                 0f,
                                                 level.transform.position.z + distanceZ);
@@ -75,8 +72,9 @@ public class LevelGenerator : Singletone<LevelGenerator>
     }
 
     void SetThisLevelInWorldSpace(LevelScript level, Door otherDoor, bool isThisAFirstLevel)
-    {
-        level.transform.Rotate(-otherDoor.transform.rotation.eulerAngles);
+    {        
+        level.OnEnterLevel += otherDoor.CloseDoor;
+        
         SpawnedLevels.Add(level);
 
         Door door = level.AllDoors.First(d => d.IsEnter);
@@ -85,7 +83,7 @@ public class LevelGenerator : Singletone<LevelGenerator>
             door.gameObject.SetActive(true);
         }
 
-        StartCoroutine(Test_Positioning(2f, door, otherDoor, level));
+        SetPosition(2f, door, otherDoor, level);
     }
 
     LevelScript GetRandomLevelPrefab()
